@@ -1,2 +1,2 @@
 # IngeSoft2
-Proyecto fin Ingenieria del software 
+Proyecto final Ingenieria del software 2
