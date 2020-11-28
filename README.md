@@ -1,2 +1,2 @@
 # IngeSoft2
-Proyecto Ingesoft
+Proyecto Ingesoft 2
