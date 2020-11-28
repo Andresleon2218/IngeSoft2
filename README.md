@@ -1,2 +1,2 @@
 # IngeSoft2
-Proyecto Ingesoft 7
+Proyecto Ingenieria de Software
