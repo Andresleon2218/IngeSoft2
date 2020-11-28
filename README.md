@@ -1,2 +1,2 @@
 # IngeSoft2
-Proyecto Ingenieria del software 2 Andres
+Proyecto final Ingenieria del software 
