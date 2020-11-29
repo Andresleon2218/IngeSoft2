@@ -17,7 +17,7 @@ class CreateSpecialtiesTable extends Migration
             $table->id();
             $table->string('name')->unique()->nullable(false);
             $table->text('description');
-            $table->enum('active',['yes','not'])->default('yes')->nullable(false);
+            $table->boolean('active')->default(true);
             $table->timestamps();
         });
     }

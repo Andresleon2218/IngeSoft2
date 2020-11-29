@@ -28,6 +28,7 @@ class CreateSchedulesTable extends Migration
             $table->date('end_date');
             $table->foreignId('professional_id')->constrained('users')->nullable(false)
                     ->onDelete('restrict')->onUpdate('cascade');
+            $table->boolean('active')->default(true);
             $table->timestamps();
         });
     }

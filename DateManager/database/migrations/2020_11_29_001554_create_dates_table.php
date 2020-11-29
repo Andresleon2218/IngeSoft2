@@ -22,7 +22,7 @@ class CreateDatesTable extends Migration
                     ->onDelete('restrict')->onUpdate('cascade');
             $table->foreignId('client_id')->constrained('users')->nullable(false)
                     ->onDelete('restrict')->onUpdate('cascade');
-            $table->enum('active',['yes','no'])->default('yes')->nullable(false);
+            $table->boolean('active')->default(true);
             $table->text('description');
             $table->timestamps();
         });
