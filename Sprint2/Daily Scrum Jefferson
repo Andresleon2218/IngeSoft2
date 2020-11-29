@@ -1,1 +1,27 @@
+Fecha: 28/11/2020
+1. ¿Qué has hecho desde la última reunión?
+Pasé toda la estructura de la base de datos propuesta por el product owner
+a las migraciones de Laravel con el fin de generar el diagrama Entidad-Relación,
+haciendo uso de la librería ER Diagram. Además de hacer algunas modificaciones a
+la estructura anteriormente mencionada y ejecutarlas en nuestra base de datos.
 
+2. ¿Qué harás hoy?
+Crearé los modelos a utilizar en nuestra aplicación, además de establecer sus
+relaciones para luego generar el diagrama Entidad-Relación.
+
+3. ¿Qué impedimentos tienes para realizar el trabajo y qué ayudas necesitas?
+Hasta el momento, no me he encontrado con situaciones que me impidan realizar
+el trabajo planeado.
+
+
+Fecha:29/11/2020
+1. ¿Qué has hecho desde la última reunión?
+Creé los modelos que van a controlar nuestra base de datos y sus respectivas
+relaciones y por último, generé la imágen de nuestro diagrama Entidad-Relación.
+
+2. ¿Qué harás hoy?
+Tengo planeado crear los middlewares necesarios que se encarguen de proteger
+los diferentes módulos de nuestro aplicativo.
+
+3. ¿Qué impedimentos tienes para realizar el trabajo y qué ayudas necesitas?
+No me he topado con impedimientos.
