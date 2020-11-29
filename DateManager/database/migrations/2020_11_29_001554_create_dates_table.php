@@ -15,15 +15,15 @@ class CreateDatesTable extends Migration
     {
         Schema::create('dates', function (Blueprint $table) {
             $table->id();
-            $table->date('date')->nullable(false);
-            $table->time('start')->nullable(false);
-            $table->time('end')->nullable(false);
-            $table->foreignId('professional_id')->constrained('users')->nullable(false)
+            $table->date('date');
+            $table->time('start');
+            $table->time('end');
+            $table->foreignId('professional_id')->constrained('users')
                     ->onDelete('restrict')->onUpdate('cascade');
-            $table->foreignId('client_id')->constrained('users')->nullable(false)
+            $table->foreignId('client_id')->constrained('users')
                     ->onDelete('restrict')->onUpdate('cascade');
             $table->boolean('active')->default(true);
-            $table->text('description');
+            $table->text('description')->nullable();
             $table->timestamps();
         });
     }

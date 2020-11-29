@@ -15,18 +15,18 @@ class CreateSchedulesTable extends Migration
     {
         Schema::create('schedules', function (Blueprint $table) {
             $table->id();
-            $table->boolean('monday')->nullable(false);
-            $table->boolean('tuesday')->nullable(false);
-            $table->boolean('wednesday')->nullable(false);
-            $table->boolean('thursday')->nullable(false);
-            $table->boolean('friday')->nullable(false);
-            $table->boolean('saturday')->nullable(false);
-            $table->boolean('sunday')->nullable(false);
-            $table->time('start_time')->nullable(false);
-            $table->time('end_time')->nullable(false);
+            $table->boolean('monday');
+            $table->boolean('tuesday');
+            $table->boolean('wednesday');
+            $table->boolean('thursday');
+            $table->boolean('friday');
+            $table->boolean('saturday');
+            $table->boolean('sunday');
+            $table->time('start_time');
+            $table->time('end_time');
             $table->date('start_date');
             $table->date('end_date');
-            $table->foreignId('professional_id')->constrained('users')->nullable(false)
+            $table->foreignId('professional_id')->constrained('users')
                     ->onDelete('restrict')->onUpdate('cascade');
             $table->boolean('active')->default(true);
             $table->timestamps();

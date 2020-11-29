@@ -14,8 +14,8 @@ class CreateSpecialtyUser extends Migration
     public function up()
     {
         Schema::create('specialty_user', function (Blueprint $table) {
-            $table->foreignId('professional_id')->constrained('users')->nullable(false);
-            $table->foreignId('specialty_id')->constrained()->nullable(false);
+            $table->foreignId('professional_id')->constrained('users');
+            $table->foreignId('specialty_id')->constrained();
         });
     }
 
