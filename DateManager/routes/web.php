@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('Bienvenido');
+    return view('Preuabs route');
 });
 
 Auth::routes(['verify'=>true]);
