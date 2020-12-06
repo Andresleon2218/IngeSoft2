@@ -20,3 +20,9 @@ Route::get('/', function () {
 Auth::routes(['verify'=>true]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('dashboard/downloadClientspdf', PdfController::class, 'downloadClient');
+Route::get('dashboard/downloadProspdf', PdfController::class, 'downloadPro');
+
+Route::get('dashboard/streamClientspdf', PdfController::class, 'streamClient');
+Route::get('dashboard/streamProspdf', PdfController::class, 'streamPro');
