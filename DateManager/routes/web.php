@@ -1,6 +1,11 @@
 <?php
 
+use App\Http\Controllers\DateController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LandingController;
+use App\Http\Controllers\ScheduleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,7 +18,11 @@ use Illuminate\Support\Facades\Route;
 | Ruta de back
 */
 
-Route::get('/',[App\Http\Controllers\LandingController::class, 'index']);
+Route::get('/',[LandingController::class, 'index']);
 Auth::routes(['verify'=>true]);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+Route::resource('/dates',DateController::class)->names('dates');
+
+Route::resource('/schedule',ScheduleController::class)->names('schedule');
