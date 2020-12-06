@@ -26,8 +26,8 @@ class Date extends Model
         'end' => 'time'
     ];
 
-    public function professional() {
-        return $this->belongsTo(User::class);
+    public function schedule() {
+        return $this->belongsTo(Schedule::class);
     }
 
     public function client() {

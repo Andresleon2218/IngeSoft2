@@ -18,7 +18,7 @@ class CreateDatesTable extends Migration
             $table->date('date');
             $table->time('start');
             $table->time('end');
-            $table->foreignId('professional_id')->constrained('users')
+            $table->foreignId('schedule_id')->constrained('schedules')
                     ->onDelete('restrict')->onUpdate('cascade');
             $table->foreignId('client_id')->constrained('users')
                     ->onDelete('restrict')->onUpdate('cascade');

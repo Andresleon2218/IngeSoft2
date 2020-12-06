@@ -17,7 +17,7 @@ class ValidatedIfProfessional
      */
     public function handle(Request $request, Closure $next)
     {
-        if (Auth::user()->role->key == 'pro')
+        if (Auth::user()->role->key == 'pro' || Auth::user()->role->key == 'admin')
             return $next($request);
         return back();
     }
