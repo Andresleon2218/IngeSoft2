@@ -17,7 +17,7 @@ class ValidatedIfClient
      */
     public function handle(Request $request, Closure $next)
     {
-        if (Auth::user()->role->key == 'client')
+        if (Auth::user()->role->key == 'client' || Auth::user()->role->key == 'admin')
             return $next($request);
         return back();
     }
