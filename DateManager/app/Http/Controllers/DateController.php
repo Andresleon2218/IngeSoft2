@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Date;
 use App\Models\User;
-use Illuminate\Http\Request;
 use App\Http\Requests\DateRequest;
 use Illuminate\Support\Facades\Auth;
 
@@ -34,7 +33,7 @@ class DateController extends Controller
      */
     public function create()
     {
-        //
+        return view('date.create');
     }
 
     /**
@@ -47,6 +46,13 @@ class DateController extends Controller
     {
         $data = $request->validated();
         $professional = User::find($data['professional_id']);
+        // Day of the week index: 1 => Monday, 2 => Tuesday, ...
+        //$dateDate = Carbon;
+        // Filter the professional's schedules according to the date
+        //foreach ($professional->schedules as $schedule) {
+        //    if ($schedule->start_date )
+        //}
+
         $date = new Date($data);
         $date->professional()->associate($professional);
         $date->client()->associate(Auth::user());
