@@ -34,6 +34,7 @@
 
     <label for="start_time">Hora de inicio</label>
     <input type="time" name="start_time" id="start_time" value="{{$schedule->start_time}}">
+    {{$schedule->start_time}}
 
     <label for="end_time">Hora de terminación</label>
     <input type="time" name="end_time" id="end_time" value="{{$schedule->end_time}}">

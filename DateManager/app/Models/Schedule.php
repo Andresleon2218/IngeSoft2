@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Casts\Time;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Schedule extends Model
 {
@@ -16,9 +17,9 @@ class Schedule extends Model
     ];
 
     protected $casts = [
-        'start_time' => 'datetime:H:i',
-        'end_time' => 'datetime:H:i',
-        'duration_of_date' => 'datetime:H:i'
+        'start_time' => Time::class,
+        'end_time' => Time::class,
+        'duration_of_date' => Time::class
     ];
 
     public function professional() {
