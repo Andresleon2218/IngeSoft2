@@ -29,6 +29,7 @@ class StoreUserPost extends FormRequest
             'lastnames' => 'required',
             'email' => 'required',
             'phone' => 'required',
+            'password' => 'required'
         ];
     }
 }

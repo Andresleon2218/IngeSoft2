@@ -54,5 +54,5 @@ Route::delete('users/{user}/destroy', [UserController::class, 'destroy'])->name(
 Route::get('users/{pro}/showPro', [UserController::class, 'showPro'])->name('showPro');
 
 Route::get('users/indexPro', [UserController::class, 'indexPro'])->name('indexPro');
-
+Route::post('users/create',[UserController::class,'store'])->name('user.store');
 

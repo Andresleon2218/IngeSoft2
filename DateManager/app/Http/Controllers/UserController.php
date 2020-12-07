@@ -53,9 +53,12 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreUserPost $request)
     {
-        User::create($request->validated());
+        $user = new User($request->validated());
+        $proRole = Role::where('key','pro')->first();
+        $user->role()->associate($proRole);
+        $user->save();
         return back()->with('status', 'User created succesfully');
     }
 

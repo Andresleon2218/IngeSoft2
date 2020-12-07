@@ -53,7 +53,7 @@
 						</li>
 						<li><a><i class="fa fa-edit"></i>Profesionales <span class="fa fa-chevron-down"></span></a>
 							<ul class="nav child_menu">
-							<li><a href="{{route('')}}">Opciones</a></li>
+							<li><a href="{{route('indexPro')}}">Listado</a></li>
 
 							</ul>
 						</li>
