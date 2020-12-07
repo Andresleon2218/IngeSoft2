@@ -4,13 +4,19 @@ namespace App\Http\Controllers;
 
 use App\Models\Role;
 use App\Models\User;
+use App\Exports\ProExport;
+use App\Exports\UsersExport;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreUserPost;
+use Maatwebsite\Excel\Facades\Excel;
 
 class UserController extends Controller
 {
     public function __construct()
     {
         $this->middleware(['auth', 'verified', 'admin']);
+       // $this->middleware('client')->only(['store', 'showClient', 'editClient', 'update', 'destroy']);
+      //  $this->middleware('pro')->only(['store', 'showPro', 'editPro', 'update', 'destroy']);
     }
     /**
      * Display a listing of the resource.
@@ -19,15 +25,15 @@ class UserController extends Controller
      */
     public function indexClients()
     {
-        $role = Role::where('name', 'client');
-        $clients = User::where('role_id', $role->key)->paginate(5);
+        $role = Role::where('key', 'client')->first();
+        $clients = User::where('role_id', $role->id)->paginate(5);
         return view('dashboard.client.index', ['clients'=>$clients]);
     }
 
     public function indexPro()
     {
-        $role = Role::where('name', 'pro');
-        $pros = User::where('role_id', $role->key)->paginate(5);
+        $role = Role::where('key', 'pro')->first();
+        $pros = User::where('role_id', $role->id)->paginate(5);
         return view('dashboard.pro.index', ['pros'=>$pros]);
     }
 
@@ -82,7 +88,8 @@ class UserController extends Controller
 
     public function editPro(User $pro)
     {
-        return view('dashboard.pro.edit', ["pro" => $pro]);
+       return view('dashboard.pro.edit', ["pro" => $pro]);
+
     }
 
     /**
@@ -92,7 +99,7 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(StoreUserPost $request, User $user)
     {
         $user->update($request->validated());
         return back()->with('status', 'User updated succesfully');
@@ -108,6 +115,16 @@ class UserController extends Controller
     {
         $user->update(['active'=>false]);
         return back()->with('status', 'User deleted succesfully');
+    }
+
+    public function exportClient()
+    {
+        return Excel::download(new UsersExport, 'users.xlsx');
+    }
+
+    public function exportPro()
+    {
+        return Excel::download(new ProExport, 'pros.xlsx');
     }
 
 }

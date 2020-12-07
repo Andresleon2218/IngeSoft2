@@ -20,18 +20,20 @@ class PdfController extends Controller
      */
     public function downloadClient()
     {
-        $role = Role::where('name', 'client');
-        $clients = User::where('role_id', $role->key)->paginate(6);
-        $pdf = PDF::loadView('dashboard.client.pdf', ['clients' => $clients]);
-        return $pdf->stream('clients.pdf');
+        $role = Role::where('key', 'client')->first();
+        $clients = User::where('role_id', $role->id)->paginate(6);
+        $pdf = resolve('dompdf.wrapper');
+        $pdf->loadView('dashboard.client.pdf', ['clients' => $clients]);
+        return $pdf->download('clients.pdf');
     }
 
     public function downloadPro()
     {
-        $role = Role::where('name', 'pro');
-        $pros = User::where('role_id', $role->key)->paginate(6);
-        $pdf = PDF::loadView('dashboard.pro.pdf', ['pros' => $pros]);
-        return $pdf->stream('pros.pdf');
+        $role = Role::where('key', 'pro')->first();
+        $pros = User::where('role_id', $role->id)->paginate(6);
+        $pdf = resolve('dompdf.wrapper');
+        $pdf->loadView('dashboard.pro.pdf', ['pros' => $pros]);
+        return $pdf->download('pros.pdf');
     }
 
     /**
@@ -40,17 +42,19 @@ class PdfController extends Controller
      */
     public function streamClient()
     {
-        $role = Role::where('name', 'client');
-        $clients = User::where('role_id', $role->key)->paginate(6);
-        $pdf = PDF::loadView('dashboard.client.pdf', ['clients' => $clients]);
+        $role = Role::where('key', 'client')->first();
+        $clients = User::where('role_id', $role->id)->paginate(6);
+        $pdf = resolve('dompdf.wrapper');
+        $pdf->loadView('dashboard.client.pdf', ['clients' => $clients]);
         return $pdf->stream('clients.pdf');
     }
 
     public function streamPro()
     {
-        $role = Role::where('name', 'pro');
-        $pros = User::where('role_id', $role->key)->paginate(6);
-        $pdf = PDF::loadView('dashboard.pro.pdf', ['pros' => $pros]);
+        $role = Role::where('key', 'pro')->first();
+        $pros = User::where('role_id', $role->id)->paginate(6);
+        $pdf = resolve('dompdf.wrapper');
+        $pdf->loadView('dashboard.pro.pdf', ['pros' => $pros]);
         return $pdf->stream('pros.pdf');
     }
 
