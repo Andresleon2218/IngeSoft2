@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b51408f34cc0c4bac6f206fb60f6fb59",
+    "content-hash": "4fa5b3652ea71deb16cb667715d2a0cb",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1191,11 +1191,15 @@
                 "framework",
                 "laravel"
             ],
+<<<<<<< HEAD
+            "time": "2020-12-02T06:08:43+00:00"
+=======
             "support": {
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
             "time": "2020-12-03T13:47:59+00:00"
+>>>>>>> 8fb1ac25170e144309bf88f424f4d8bf1402527b
         },
         {
             "name": "laravel/tinker",
@@ -1317,10 +1321,6 @@
                 "laravel",
                 "ui"
             ],
-            "support": {
-                "issues": "https://github.com/laravel/ui/issues",
-                "source": "https://github.com/laravel/ui/tree/v3.1.0"
-            },
             "time": "2020-11-03T19:51:21+00:00"
         },
         {
@@ -1636,10 +1636,13 @@
                 "php",
                 "phpspreadsheet"
             ],
+<<<<<<< HEAD
+=======
             "support": {
                 "issues": "https://github.com/Maatwebsite/Laravel-Excel/issues",
                 "source": "https://github.com/Maatwebsite/Laravel-Excel/tree/3.1.26"
             },
+>>>>>>> 8fb1ac25170e144309bf88f424f4d8bf1402527b
             "funding": [
                 {
                     "url": "https://laravel-excel.com/commercial-support",
@@ -1711,10 +1714,13 @@
                 "stream",
                 "zip"
             ],
+<<<<<<< HEAD
+=======
             "support": {
                 "issues": "https://github.com/maennchen/ZipStream-PHP/issues",
                 "source": "https://github.com/maennchen/ZipStream-PHP/tree/master"
             },
+>>>>>>> 8fb1ac25170e144309bf88f424f4d8bf1402527b
             "funding": [
                 {
                     "url": "https://opencollective.com/zipstream",
@@ -1816,10 +1822,13 @@
                 "complex",
                 "mathematics"
             ],
+<<<<<<< HEAD
+=======
             "support": {
                 "issues": "https://github.com/MarkBaker/PHPComplex/issues",
                 "source": "https://github.com/MarkBaker/PHPComplex/tree/PHP8"
             },
+>>>>>>> 8fb1ac25170e144309bf88f424f4d8bf1402527b
             "time": "2020-08-26T10:42:07+00:00"
         },
         {
@@ -1890,10 +1899,13 @@
                 "matrix",
                 "vector"
             ],
+<<<<<<< HEAD
+=======
             "support": {
                 "issues": "https://github.com/MarkBaker/PHPMatrix/issues",
                 "source": "https://github.com/MarkBaker/PHPMatrix/tree/PHP8"
             },
+>>>>>>> 8fb1ac25170e144309bf88f424f4d8bf1402527b
             "time": "2020-08-28T17:11:00+00:00"
         },
         {
@@ -2035,10 +2047,13 @@
             "keywords": [
                 "enum"
             ],
+<<<<<<< HEAD
+=======
             "support": {
                 "issues": "https://github.com/myclabs/php-enum/issues",
                 "source": "https://github.com/myclabs/php-enum/tree/1.7.7"
             },
+>>>>>>> 8fb1ac25170e144309bf88f424f4d8bf1402527b
             "funding": [
                 {
                     "url": "https://github.com/mnapoli",
@@ -2128,10 +2143,6 @@
                 "datetime",
                 "time"
             ],
-            "support": {
-                "issues": "https://github.com/briannesbitt/Carbon/issues",
-                "source": "https://github.com/briannesbitt/Carbon"
-            },
             "funding": [
                 {
                     "url": "https://opencollective.com/Carbon",
@@ -2266,6 +2277,8 @@
             "time": "2020-11-07T02:01:34+00:00"
         },
         {
+<<<<<<< HEAD
+=======
             "name": "phenx/php-font-lib",
             "version": "0.5.2",
             "source": {
@@ -2351,6 +2364,7 @@
             "time": "2019-09-11T20:02:13+00:00"
         },
         {
+>>>>>>> 8fb1ac25170e144309bf88f424f4d8bf1402527b
             "name": "phpoffice/phpspreadsheet",
             "version": "1.15.0",
             "source": {
@@ -2444,10 +2458,13 @@
                 "xls",
                 "xlsx"
             ],
+<<<<<<< HEAD
+=======
             "support": {
                 "issues": "https://github.com/PHPOffice/PhpSpreadsheet/issues",
                 "source": "https://github.com/PHPOffice/PhpSpreadsheet/tree/1.15.0"
             },
+>>>>>>> 8fb1ac25170e144309bf88f424f4d8bf1402527b
             "time": "2020-10-11T13:20:59+00:00"
         },
         {
@@ -2724,9 +2741,12 @@
                 "request",
                 "response"
             ],
+<<<<<<< HEAD
+=======
             "support": {
                 "source": "https://github.com/php-fig/http-factory/tree/master"
             },
+>>>>>>> 8fb1ac25170e144309bf88f424f4d8bf1402527b
             "time": "2019-04-30T12:38:16+00:00"
         },
         {
@@ -3361,9 +3381,6 @@
                 "console",
                 "terminal"
             ],
-            "support": {
-                "source": "https://github.com/symfony/console/tree/v5.2.0"
-            },
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -3426,9 +3443,6 @@
             ],
             "description": "Symfony CssSelector Component",
             "homepage": "https://symfony.com",
-            "support": {
-                "source": "https://github.com/symfony/css-selector/tree/v5.2.0"
-            },
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -3562,9 +3576,6 @@
             ],
             "description": "Symfony ErrorHandler Component",
             "homepage": "https://symfony.com",
-            "support": {
-                "source": "https://github.com/symfony/error-handler/tree/v5.2.0"
-            },
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -3647,9 +3658,6 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
-            "support": {
-                "source": "https://github.com/symfony/event-dispatcher/tree/v5.2.0"
-            },
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -3787,9 +3795,6 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
-            "support": {
-                "source": "https://github.com/symfony/finder/tree/v5.2.0"
-            },
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -3939,9 +3944,6 @@
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "https://symfony.com",
-            "support": {
-                "source": "https://github.com/symfony/http-foundation/tree/v5.2.0"
-            },
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -4051,9 +4053,6 @@
             ],
             "description": "Symfony HttpKernel Component",
             "homepage": "https://symfony.com",
-            "support": {
-                "source": "https://github.com/symfony/http-kernel/tree/v5.2.0"
-            },
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -4131,9 +4130,6 @@
                 "mime",
                 "mime-type"
             ],
-            "support": {
-                "source": "https://github.com/symfony/mime/tree/v5.2.0"
-            },
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -4922,9 +4918,6 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "https://symfony.com",
-            "support": {
-                "source": "https://github.com/symfony/process/tree/v5.2.0"
-            },
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -5012,9 +5005,6 @@
                 "uri",
                 "url"
             ],
-            "support": {
-                "source": "https://github.com/symfony/routing/tree/v5.2.0"
-            },
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -5174,9 +5164,6 @@
                 "utf-8",
                 "utf8"
             ],
-            "support": {
-                "source": "https://github.com/symfony/string/tree/v5.2.0"
-            },
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -5267,9 +5254,6 @@
             ],
             "description": "Symfony Translation Component",
             "homepage": "https://symfony.com",
-            "support": {
-                "source": "https://github.com/symfony/translation/tree/v5.2.0"
-            },
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -5433,9 +5417,6 @@
                 "debug",
                 "dump"
             ],
-            "support": {
-                "source": "https://github.com/symfony/var-dumper/tree/v5.2.0"
-            },
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -5771,10 +5752,6 @@
                 "beyondcode",
                 "laravel-er-diagram-generator"
             ],
-            "support": {
-                "issues": "https://github.com/beyondcode/laravel-er-diagram-generator/issues",
-                "source": "https://github.com/beyondcode/laravel-er-diagram-generator/tree/1.5.0"
-            },
             "time": "2020-10-08T13:41:25+00:00"
         },
         {
@@ -5857,10 +5834,6 @@
                 "redis",
                 "xcache"
             ],
-            "support": {
-                "issues": "https://github.com/doctrine/cache/issues",
-                "source": "https://github.com/doctrine/cache/tree/1.10.x"
-            },
             "funding": [
                 {
                     "url": "https://www.doctrine-project.org/sponsorship.html",
@@ -5968,10 +5941,6 @@
                 "sqlserver",
                 "sqlsrv"
             ],
-            "support": {
-                "issues": "https://github.com/doctrine/dbal/issues",
-                "source": "https://github.com/doctrine/dbal/tree/2.12.1"
-            },
             "funding": [
                 {
                     "url": "https://www.doctrine-project.org/sponsorship.html",
@@ -6062,10 +6031,6 @@
                 "event system",
                 "events"
             ],
-            "support": {
-                "issues": "https://github.com/doctrine/event-manager/issues",
-                "source": "https://github.com/doctrine/event-manager/tree/1.1.x"
-            },
             "funding": [
                 {
                     "url": "https://www.doctrine-project.org/sponsorship.html",
@@ -6837,10 +6802,6 @@
                 }
             ],
             "description": "Library for handling version information and constraints",
-            "support": {
-                "issues": "https://github.com/phar-io/version/issues",
-                "source": "https://github.com/phar-io/version/tree/3.0.3"
-            },
             "time": "2020-11-30T09:21:21+00:00"
         },
         {
@@ -6882,10 +6843,6 @@
                     "email": "mike.vanriel@naenius.com"
                 }
             ],
-            "support": {
-                "issues": "https://github.com/phpDocumentor/GraphViz/issues",
-                "source": "https://github.com/phpDocumentor/GraphViz/tree/master"
-            },
             "time": "2016-02-02T13:00:08+00:00"
         },
         {
@@ -7178,10 +7135,6 @@
                 "testing",
                 "xunit"
             ],
-            "support": {
-                "issues": "https://github.com/sebastianbergmann/php-code-coverage/issues",
-                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/9.2.5"
-            },
             "funding": [
                 {
                     "url": "https://github.com/sebastianbergmann",
@@ -7518,10 +7471,13 @@
                 "testing",
                 "xunit"
             ],
+<<<<<<< HEAD
+=======
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "source": "https://github.com/sebastianbergmann/phpunit/tree/9.5.0"
             },
+>>>>>>> 8fb1ac25170e144309bf88f424f4d8bf1402527b
             "funding": [
                 {
                     "url": "https://phpunit.de/donate.html",
@@ -8147,10 +8103,6 @@
             ],
             "description": "Library for counting the lines of code in PHP source code",
             "homepage": "https://github.com/sebastianbergmann/lines-of-code",
-            "support": {
-                "issues": "https://github.com/sebastianbergmann/lines-of-code/issues",
-                "source": "https://github.com/sebastianbergmann/lines-of-code/tree/1.0.3"
-            },
             "funding": [
                 {
                     "url": "https://github.com/sebastianbergmann",
@@ -8558,5 +8510,5 @@
         "php": "^7.3|^8.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "1.1.0"
 }

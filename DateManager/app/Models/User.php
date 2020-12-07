@@ -54,7 +54,7 @@ class User extends Authenticatable implements MustVerifyEmail
     }
 
     public function schedules() {
-        return $this->hasMany(Schedule::class);
+        return $this->hasMany(Schedule::class,'professional_id');
     }
 
     public function specialties() {

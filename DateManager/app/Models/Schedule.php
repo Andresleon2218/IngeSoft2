@@ -15,13 +15,13 @@ class Schedule extends Model
         'start_time','end_time','start_date','end_date','duration_of_date','professional_id'
     ];
 
-    protected $casts = [
+    /*protected $casts = [
         'start_time' => 'time',
         'end_time' => 'time',
         'duration_of_date' => 'time',
         'start_date' => 'date',
         'end_date' => 'date',
-    ];
+    ];*/
 
     public function professional() {
         return $this->belongsTo(User::class);
