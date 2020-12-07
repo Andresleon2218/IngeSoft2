@@ -25,8 +25,8 @@ class DateRequest extends FormRequest
     {
         return [
             'date' => 'required|date|after_or_equal:today',
-            'start' => 'required|date|after:now',
-            'end' => 'required|date|after:start',
+            'start' => 'required|date_format:H:i',
+            'end' => 'required|date_format:H:i|after:start',
             'professional_id' => 'required|integer',
             'description' => 'nullable|string'
         ];
