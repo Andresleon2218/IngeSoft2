@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Role;
 use App\Models\User;
 use Barryvdh\DomPDF\PDF;
+use Illuminate\Support\Facades\Auth;
 
 
 class PdfController extends Controller
@@ -36,6 +37,21 @@ class PdfController extends Controller
         return $pdf->download('pros.pdf');
     }
 
+    public function downloadSchedule()
+    {
+        $schedules = Auth::user()->schedules;
+        $pdf = resolve('dompdf.wrapper');
+        $pdf->loadView('schedule.pdf', ['schedules' => $schedules]);
+        return $pdf->download('horario.pdf');
+    }
+
+    public function downloadDate()
+    {
+        $dates = Auth::user()->dates;
+        $pdf = resolve('dompdf.wrapper');
+        $pdf->loadView('date.pdf', ['dates' => $dates]);
+        return $pdf->download('citas.pdf');
+    }
     /**
      * Show the pdf.
      *
@@ -58,4 +74,19 @@ class PdfController extends Controller
         return $pdf->stream('pros.pdf');
     }
 
+    public function streamSchedule()
+    {
+        $schedules = Auth::user()->schedules;
+        $pdf = resolve('dompdf.wrapper');
+        $pdf->loadView('schedule.pdf', ['schedules' => $schedules]);
+        return $pdf->stream('horario.pdf');
+    }
+
+    public function streamDate()
+    {
+        $dates = Auth::user()->dates;
+        $pdf = resolve('dompdf.wrapper');
+        $pdf->loadView('date.pdf', ['dates' => $dates]);
+        return $pdf->stream('citas.pdf');
+    }
 }

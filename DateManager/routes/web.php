@@ -29,11 +29,14 @@ Auth::routes(['verify'=>true]);
 
 Route::get('dashboard/downloadClientspdf', [PdfController::class, 'downloadClient'])->name('downloadClient');
 Route::get('dashboard/downloadProspdf', [PdfController::class, 'downloadPro'])->name('downloadPro');
+Route::get('dashboard/downloadSchedulespdf', [PdfController::class, 'downloadSchedule'])->name('downloadSchedule');
 Route::get('dashboard/streamClientspdf', [PdfController::class, 'streamClient'])->name('streamClient');
 Route::get('dashboard/streamProspdf', [PdfController::class, 'streamPro'])->name('streamPro');
+Route::get('dashboard/streamSchedulespdf', [PdfController::class, 'streamSchedule'])->name('streamSchedule');
 
 Route::get('dashboard/excelClient', [UserController::class, 'exportClient'])->name('excelClient');
 Route::get('dashboard/excelPro', [UserController::class, 'exportPro'])->name('excelPro');
+Route::get('dashboard/excelSchedule', [UserController::class, 'exportSchedule'])->name('excelSchedule');
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
