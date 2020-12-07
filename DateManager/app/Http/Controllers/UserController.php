@@ -36,11 +36,6 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function createClient()
-    {
-        return view('dashboard.client.create', ["client" => new User()]);
-    }
-
     public function createPro()
     {
         return view('dashboard.pro.create', ["pro" => new User()]);

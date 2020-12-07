@@ -7,6 +7,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\PdfController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,7 +25,7 @@ Auth::routes(['verify'=>true]);
 
  Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
- 
+
 Route::get('dashboard/downloadClientspdf', [PdfController::class, 'downloadClient']);
 Route::get('dashboard/downloadProspdf', [PdfController::class, 'downloadPro']);
 Route::get('dashboard/streamClientspdf', [PdfController::class, 'streamClient']);
@@ -35,3 +36,5 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::resource('/dates',DateController::class)->names('dates');
 
 Route::resource('/schedule',ScheduleController::class)->names('schedule');
+
+Route::resource('dashboard/user/pro',UserController::class)->names('pro');
