@@ -21,9 +21,8 @@ class Date extends Model
     ];
 
     protected $casts = [
-        'date' => 'date',
-        'start' => 'time',
-        'end' => 'time'
+        'start' => 'date_format:H:i',
+        'end' => 'date_format:H:i'
     ];
 
     public function schedule() {

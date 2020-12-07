@@ -26,7 +26,7 @@ class CreateSchedulesTable extends Migration
             $table->time('end_time');
             $table->date('start_date');
             $table->date('end_date');
-            $table->time('duration_of_date')->default('1:00:00');
+            $table->time('duration_of_date')->default('01:00');
             $table->foreignId('professional_id')->constrained('users')
                     ->onDelete('restrict')->onUpdate('cascade');
             $table->boolean('active')->default(true);

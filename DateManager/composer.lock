@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4fa5b3652ea71deb16cb667715d2a0cb",
+    "content-hash": "b51408f34cc0c4bac6f206fb60f6fb59",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1191,15 +1191,11 @@
                 "framework",
                 "laravel"
             ],
-<<<<<<< HEAD
-            "time": "2020-12-02T06:08:43+00:00"
-=======
             "support": {
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
             "time": "2020-12-03T13:47:59+00:00"
->>>>>>> 8fb1ac25170e144309bf88f424f4d8bf1402527b
         },
         {
             "name": "laravel/tinker",
@@ -1636,13 +1632,6 @@
                 "php",
                 "phpspreadsheet"
             ],
-<<<<<<< HEAD
-=======
-            "support": {
-                "issues": "https://github.com/Maatwebsite/Laravel-Excel/issues",
-                "source": "https://github.com/Maatwebsite/Laravel-Excel/tree/3.1.26"
-            },
->>>>>>> 8fb1ac25170e144309bf88f424f4d8bf1402527b
             "funding": [
                 {
                     "url": "https://laravel-excel.com/commercial-support",
@@ -1714,13 +1703,6 @@
                 "stream",
                 "zip"
             ],
-<<<<<<< HEAD
-=======
-            "support": {
-                "issues": "https://github.com/maennchen/ZipStream-PHP/issues",
-                "source": "https://github.com/maennchen/ZipStream-PHP/tree/master"
-            },
->>>>>>> 8fb1ac25170e144309bf88f424f4d8bf1402527b
             "funding": [
                 {
                     "url": "https://opencollective.com/zipstream",
@@ -1822,13 +1804,6 @@
                 "complex",
                 "mathematics"
             ],
-<<<<<<< HEAD
-=======
-            "support": {
-                "issues": "https://github.com/MarkBaker/PHPComplex/issues",
-                "source": "https://github.com/MarkBaker/PHPComplex/tree/PHP8"
-            },
->>>>>>> 8fb1ac25170e144309bf88f424f4d8bf1402527b
             "time": "2020-08-26T10:42:07+00:00"
         },
         {
@@ -1899,13 +1874,6 @@
                 "matrix",
                 "vector"
             ],
-<<<<<<< HEAD
-=======
-            "support": {
-                "issues": "https://github.com/MarkBaker/PHPMatrix/issues",
-                "source": "https://github.com/MarkBaker/PHPMatrix/tree/PHP8"
-            },
->>>>>>> 8fb1ac25170e144309bf88f424f4d8bf1402527b
             "time": "2020-08-28T17:11:00+00:00"
         },
         {
@@ -2047,13 +2015,6 @@
             "keywords": [
                 "enum"
             ],
-<<<<<<< HEAD
-=======
-            "support": {
-                "issues": "https://github.com/myclabs/php-enum/issues",
-                "source": "https://github.com/myclabs/php-enum/tree/1.7.7"
-            },
->>>>>>> 8fb1ac25170e144309bf88f424f4d8bf1402527b
             "funding": [
                 {
                     "url": "https://github.com/mnapoli",
@@ -2277,8 +2238,6 @@
             "time": "2020-11-07T02:01:34+00:00"
         },
         {
-<<<<<<< HEAD
-=======
             "name": "phenx/php-font-lib",
             "version": "0.5.2",
             "source": {
@@ -2364,7 +2323,6 @@
             "time": "2019-09-11T20:02:13+00:00"
         },
         {
->>>>>>> 8fb1ac25170e144309bf88f424f4d8bf1402527b
             "name": "phpoffice/phpspreadsheet",
             "version": "1.15.0",
             "source": {
@@ -2458,13 +2416,6 @@
                 "xls",
                 "xlsx"
             ],
-<<<<<<< HEAD
-=======
-            "support": {
-                "issues": "https://github.com/PHPOffice/PhpSpreadsheet/issues",
-                "source": "https://github.com/PHPOffice/PhpSpreadsheet/tree/1.15.0"
-            },
->>>>>>> 8fb1ac25170e144309bf88f424f4d8bf1402527b
             "time": "2020-10-11T13:20:59+00:00"
         },
         {
@@ -2741,12 +2692,6 @@
                 "request",
                 "response"
             ],
-<<<<<<< HEAD
-=======
-            "support": {
-                "source": "https://github.com/php-fig/http-factory/tree/master"
-            },
->>>>>>> 8fb1ac25170e144309bf88f424f4d8bf1402527b
             "time": "2019-04-30T12:38:16+00:00"
         },
         {
@@ -7471,13 +7416,10 @@
                 "testing",
                 "xunit"
             ],
-<<<<<<< HEAD
-=======
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "source": "https://github.com/sebastianbergmann/phpunit/tree/9.5.0"
             },
->>>>>>> 8fb1ac25170e144309bf88f424f4d8bf1402527b
             "funding": [
                 {
                     "url": "https://phpunit.de/donate.html",

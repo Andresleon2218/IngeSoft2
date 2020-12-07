@@ -26,11 +26,11 @@ class ScheduleRequest extends FormRequest
         return [
             'days' => 'required|array',
             'days.*' => 'string|in:monday,tuesday,wednesday,thursday,friday,saturday,sunday',
-            'start_time' => 'required|date_format:h:i',
-            'end_time' => 'required|date_format:h:i|after:start_time',
+            'start_time' => 'required|date_format:H:i',
+            'end_time' => 'required|date_format:H:i|after:start_time',
             'start_date' => 'required|date|after_or_equal:today',
             'end_date' => 'required|date|after_or_equal:start_date',
-            'duration_of_date' => 'nullable|date_format:h:i'
+            'duration_of_date' => 'nullable|date_format:H:i'
         ];
     }
 }

@@ -53,8 +53,8 @@ class ScheduleController extends Controller
         foreach(Auth::user()->schedules as $currentSchedule) {
             $currentStartDate = Carbon::createFromFormat('Y-m-d',$currentSchedule->start_date);
             $currentEndDate = Carbon::createFromFormat('Y-m-d',$currentSchedule->end_date);
-            $currentStartTime = Carbon::createFromFormat('H:i:s',$currentSchedule->start_time);
-            $currentEndTime = Carbon::createFromFormat('H:i:s',$currentSchedule->end_time);
+            $currentStartTime = Carbon::createFromFormat('H:i',$currentSchedule->start_time);
+            $currentEndTime = Carbon::createFromFormat('H:i',$currentSchedule->end_time);
             // El rango de fechas del nuevo horario se solapa con el de los ya existentes.
             if (($startDate >= $currentStartDate && $startDate <= $currentEndDate)
                 || ($endDate >= $currentStartDate && $endDate <= $currentEndDate) ) {
@@ -150,8 +150,8 @@ class ScheduleController extends Controller
             if ($currentSchedule->id != $schedule->id) {
                 $currentStartDate = Carbon::createFromFormat('Y-m-d',$currentSchedule->start_date);
                 $currentEndDate = Carbon::createFromFormat('Y-m-d',$currentSchedule->end_date);
-                $currentStartTime = Carbon::createFromFormat('H:i:s',$currentSchedule->start_time);
-                $currentEndTime = Carbon::createFromFormat('H:i:s',$currentSchedule->end_time);
+                $currentStartTime = Carbon::createFromFormat('H:i',$currentSchedule->start_time);
+                $currentEndTime = Carbon::createFromFormat('H:i',$currentSchedule->end_time);
                 // El rango de fechas del nuevo horario se solapa con el de los ya existentes.
                 if (($startDate >= $currentStartDate && $startDate <= $currentEndDate)
                     || ($endDate >= $currentStartDate && $endDate <= $currentEndDate) ) {

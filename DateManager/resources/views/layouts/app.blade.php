@@ -14,7 +14,7 @@
 			<!-- Font Awesome -->
 			<link href="{{asset('assets/dashboard/vendors/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
 			<!-- NProgress -->
-			<link href="{{asset('assets/dashboard/vendors/nprogress/nprogress')}}" rel="stylesheet">			
+			<link href="{{asset('assets/dashboard/vendors/nprogress/nprogress')}}" rel="stylesheet">
 			<!-- Custom Theme Style -->
 			<link href="{{asset('assets/dashboard/build/css/custom.min.css')}}" rel="stylesheet">
 		</head>
@@ -32,8 +32,8 @@
 					<div class="profile_info">
 						<span>Bienvenido,</span>
 						<a class="navbar-brand" href="{{ url('/') }}">
-						
-                        </a>						
+
+                        </a>
 					</div>
 					</div>
 					<!-- /menu profile quick info -->
@@ -48,20 +48,20 @@
 						<li><a><i class="fa fa-home"></i> Principal <span class="fa fa-chevron-down"></span></a>
 							<ul class="nav child_menu">
 							<li><a href="index.html">Opcion 1</a></li>
-							<li><a href="index2.html">Opcion 2</a></li>						  
+							<li><a href="index2.html">Opcion 2</a></li>
 							</ul>
 						</li>
 						<li><a><i class="fa fa-edit"></i>Profesionales <span class="fa fa-chevron-down"></span></a>
 							<ul class="nav child_menu">
-							<li><a href="#">Opciones</a></li>
-							
+							<li><a href="{{route('')}}">Opciones</a></li>
+
 							</ul>
 						</li>
 						<li><a><i class="fa fa-desktop"></i> Usarios <span class="fa fa-chevron-down"></span></a>
 							<ul class="nav child_menu">
 							<li><a href="general_elements.html">Opcion 1</a></li>
 							<li><a href="media_gallery.html">Opcion 2</a></li>
-							
+
 							</ul>
 						</li>
 						<li><a><i class="fa fa-table"></i> Reportes <span class="fa fa-chevron-down"></span></a>
@@ -72,10 +72,10 @@
 						</li>
 						<li><a><i class="fa fa-bar-chart-o"></i> Calendario <span class="fa fa-chevron-down"></span></a>
 							<ul class="nav child_menu">
-							<li><a href="chartjs.html">Opciones</a></li>
-							
+							<li><a href="{{route('schedule.index')}}">Mis horarios</a></li>
+
 							</ul>
-						</li>					 
+						</li>
 						</ul>
 					</div>
 
@@ -92,13 +92,13 @@
 					</a>
 					<a data-toggle="tooltip" data-placement="top" title="Lock">
 						<span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
-					</a>					
-                   
+					</a>
+
 					<a data-toggle="tooltip" data-placement="top" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
 													 document.getElementById('logout-form').submit();">
 													 <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-                                       
+
                     </a>
 
 					</div>
@@ -113,7 +113,7 @@
 						<a id="menu_toggle"><i class="fa fa-bars"></i></a>
 					</div>
 					<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">               
+            <div class="container">
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
@@ -147,7 +147,7 @@
         </nav>
 				</div>
 				</div>
-		
+
 
 				<!-- page content -->
 				<div class="right_col" role="main">
@@ -156,7 +156,7 @@
 				@yield('content')
 				</div>
 				</div>
-				
+
 				<footer>
 				<div class="pull-right">
 					Ingenieria del Software II  <a href="https://autonoma.edu.co">UAM</a>
@@ -171,10 +171,10 @@
 			<script src="{{asset('assets/dashboard/vendors/jquery/dist/jquery.min.js')}}"></script>
 			<!-- Bootstrap -->
 			<script src="{{asset('assets/dashboard/vendors/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
-			
-			
+
+
 			<!-- Custom Theme Scripts -->
 			<script src="{{asset('assets/dashboard/build/js/custom.min.js')}}"></script>
-			
+
 		</body>
 		</html>
