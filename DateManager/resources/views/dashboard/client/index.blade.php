@@ -1,4 +1,5 @@
 
+<a href="{{ route('excelClient')}}">Exportar a excel</a>
 <table class="table">
     <thead>
         <tr>

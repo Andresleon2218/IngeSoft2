@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Schedule;
 use Illuminate\Support\Carbon;
+use App\Exports\ScheduleExport;
 use Illuminate\Support\Facades\Auth;
+use Maatwebsite\Excel\Facades\Excel;
 use App\Http\Requests\ScheduleRequest;
 
 class ScheduleController extends Controller
@@ -188,5 +190,10 @@ class ScheduleController extends Controller
     {
         $schedule->update(['active' => false]);
         return redirect(route('schedule.index'))->with('success','Horario desactivado');
+    }
+
+    public function export()
+    {
+        return Excel::download(new ScheduleExport, 'horario.xlsx');
     }
 }

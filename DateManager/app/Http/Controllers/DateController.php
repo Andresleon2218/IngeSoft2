@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Date;
 use App\Models\User;
+use App\Exports\DateExport;
 use App\Http\Requests\DateRequest;
 use Illuminate\Support\Facades\Auth;
+use Maatwebsite\Excel\Facades\Excel;
 
 class DateController extends Controller
 {
@@ -102,5 +104,10 @@ class DateController extends Controller
     public function destroy(Date $date)
     {
         $date->update(['active' => false]);
+    }
+
+    public function export()
+    {
+        return Excel::download(new DateExport, 'citas.xlsx');
     }
 }

@@ -1,6 +1,10 @@
-<a class="btn btn-success my-3" href="{{ route('pro.create') }}">
+<a class="btn btn-success my-3" href="{{ route('createPro') }}">
     Nuevo registro
 </a>
+
+<a href="{{ route('excelPro')}}">Exportar a excel</a>
+<a href="{{ route('streamPro')}}">Ver PDF de profesionales</a>
+<a href="{{ route('downloadPro')}}">Exportar a PDF</a>
 
 <table class="table">
     <thead>
@@ -23,8 +27,8 @@
                 <td>{{$pro->email}}</td>
                 <td>{{$pro->phone}}</td>
                 <td>
-                    <a href="{{ route('pro.show', $pro->id) }}" class="btn btn-outline-primary">Ver</a>
-                    <a href="{{ route('pro.edit', $pro->id) }}" class="btn btn-outline-primary">Editar</a>
+                    <a href="{{ route('showPro', $pro->id) }}" class="btn btn-outline-primary">Ver</a>
+                    <a href="{{ route('editPro', $pro->id) }}" class="btn btn-outline-primary">Editar</a>
                 <button data-toggle="modal" data-target="#deleteModal" data-id="{{ $pro->id }}" class="btn btn-outline-danger">Borrar</button>
                 </td>
             </tr>
@@ -48,7 +52,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-        <form action="{{ route('user.destroy', 0)}}" id="formDelete" data-action="{{route('user.destroy', 0)}}" method="POST">
+        <form action="{{ route('destroyUser', 0)}}" id="formDelete" data-action="{{route('destroyUser', 0)}}" method="POST">
             @method('DELETE')
             @csrf
             <button type="submit" class="btn btn-danger">Eliminar</button>

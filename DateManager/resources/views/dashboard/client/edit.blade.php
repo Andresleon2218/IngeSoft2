@@ -1,4 +1,4 @@
-<form action="{{route('user.update', $pro->id)}}" method="post">
+<form action="{{route('users/'.$client->id.'/update')}}" method="post">
     @method('PUT')
     @csrf
 
