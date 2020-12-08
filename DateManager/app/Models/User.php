@@ -24,6 +24,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'email',
         'password',
         'phone',
+        'active'
     ];
 
     /**
@@ -58,7 +59,7 @@ class User extends Authenticatable implements MustVerifyEmail
     }
 
     public function specialties() {
-        return $this->belongsToMany(User::class,'specialty_user','professional_id','specialty_id');
+        return $this->belongsToMany(Specialty::class,'specialty_user','professional_id','specialty_id');
     }
 
 }

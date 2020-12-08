@@ -1,14 +1,15 @@
 <?php
 
-use App\Http\Controllers\DateController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\LandingController;
-use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\PdfController;
+use App\Http\Controllers\DateController;
 use App\Http\Controllers\UserController;
-use App\Models\User;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ScheduleController;
+use App\Http\Controllers\Admin\ClientController;
+use App\Http\Controllers\Admin\SpecialtyController;
+use App\Http\Controllers\Admin\ProfessionalController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,11 +22,26 @@ use App\Models\User;
 | Ruta de back
 */
 
-Route::get('/',[LandingController::class, 'index']);
+Route::get('/', function () {
+    return view('welcome');
+})->name('welcome')->middleware('guest');
+
 Auth::routes(['verify'=>true]);
 
- Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// --------------------- Rutas del perfil --------------------
+Route::get('me',[ProfileController::class,'show'])->name('profile');
+Route::get('me/update',[ProfileController::class,'edit'])->name('profile.edit');
+Route::put('me/update',[ProfileController::class,'update'])->name('profile.update');
+Route::delete('me/delete',[ProfileController::class,'destroy'])->name('profile.delete');
 
+// ---------------- Rutas de las especialidades -------------
+Route::resource('specialties', SpecialtyController::class)->names('specialty');
+
+// --------------- Rutas de los profesionales --------------
+Route::resource('professionals', ProfessionalController::class)->names('professional');
+
+// -------------- Rutas de los clientes -------------------
+Route::resource('clients', ClientController::class)->names('client');
 
 Route::get('dashboard/downloadClientspdf', [PdfController::class, 'downloadClient'])->name('downloadClient');
 Route::get('dashboard/downloadProspdf', [PdfController::class, 'downloadPro'])->name('downloadPro');
@@ -38,7 +54,6 @@ Route::get('dashboard/excelClient', [UserController::class, 'exportClient'])->na
 Route::get('dashboard/excelPro', [UserController::class, 'exportPro'])->name('excelPro');
 Route::get('dashboard/excelSchedule', [UserController::class, 'exportSchedule'])->name('excelSchedule');
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::resource('/dates',DateController::class)->names('dates');
 
