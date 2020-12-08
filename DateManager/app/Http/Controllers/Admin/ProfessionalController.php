@@ -37,7 +37,7 @@ class ProfessionalController extends Controller
      */
     public function create()
     {
-        $specialties = Specialty::orderBy('created_at','desc')->get();
+        $specialties = Specialty::where('active',true)->orderBy('created_at','desc')->get();
         return view('admin.professional.create',compact('specialties'));
     }
 

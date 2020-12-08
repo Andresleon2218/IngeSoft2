@@ -79,25 +79,35 @@
                     <input type="password" class="form-control" name="password_confirmation">
                 </div>
 
-                @foreach ($specialties as $specialty)
-                <div class="form-check">
-                    <input id="{{$specialty->name}}" type="checkbox" class="form-check-input" name="specialties[]" value="{{$specialty->id}}"
-                        @if (old('specialties'))
-                        @foreach (old('specialties') as $item)
-                            @if ($specialty->id == $item)
-                                checked
-                                @break
+                <div class="form-group col-10">
+                    <label>{{ __('Especialidades') }}</label>
+                    <div class="col-9">
+                        @foreach ($specialties as $specialty)
+                        <div class="form-check">
+                            <input id="{{$specialty->name}}" type="checkbox" class="form-check-input" name="specialties[]" value="{{$specialty->id}}"
+                                @if (old('specialties'))
+                                @foreach (old('specialties') as $item)
+                                    @if ($specialty->id == $item)
+                                        checked
+                                        @break
+                                    @endif
+                                @endforeach
+                                @endif>
+                            <label class="form-check-label font-weight-bold" for="{{$specialty->name}}">{{$specialty->name}} </label>
+                            @if ($specialty->description)
+                            <i class="fa fa-long-arrow-right"></i> {{$specialty->description}}
                             @endif
+                        </div>
                         @endforeach
-                        @endif>
-                    <label class="form-check-label font-weight-bold" for="{{$specialty->name}}">{{$specialty->name}} </label>
-                    @if ($specialty->description)
-                    <i class="fas fa-long-arrow-alt-right"></i> {{$specialty->description}}
-                    @endif
+                    </div>
+                    @error('specialties')
+                    <label class="font-weight-bold text-danger" style="font-size:80%">
+                        {{$message}}
+                    </label>
+                    @enderror
                 </div>
-                @endforeach
 
-                <div class="form-group row justify-content-center">
+                <div class="row justify-content-center">
                     <a href="{{ route('professional.index') }}" class="btn btn-outline-secondary m-2">Cancelar</a>
                     <input class="btn btn-outline-success m-2" type="submit" value="Registrar">
                 </div>

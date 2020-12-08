@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('module')
-{{__(' | Profesionales')}}
+{{__(' | Profesional')}}
 @endsection
 
 @section('title')

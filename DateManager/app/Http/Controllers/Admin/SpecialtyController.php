@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Specialty;
-use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\SpecialtyRequest;
+use Illuminate\Support\Facades\Validator;
 
 class SpecialtyController extends Controller
 {
@@ -21,8 +23,8 @@ class SpecialtyController extends Controller
      */
     public function index()
     {
-        $specialties = Specialty::orderBy('created_at', 'desc')->paginate(5);
-        return view('dashboard.specialty.index', ['specialties'=>$specialties]);
+        $specialties = Specialty::orderBy('created_at', 'desc')->paginate(10);
+        return view('admin.specialty.index',compact('specialties'));
     }
 
     /**
@@ -32,7 +34,7 @@ class SpecialtyController extends Controller
      */
     public function create()
     {
-        return view('dashboard.specialty.create', ["specialty" => new Specialty()]);
+        return view('admin.specialty.create');
     }
 
     /**
@@ -41,10 +43,13 @@ class SpecialtyController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(SpecialtyRequest $request)
     {
+        Validator::make($request->validated(),[
+            'name' => Rule::unique('specialties')
+        ])->validate();
         Specialty::create($request->validated());
-        return back()->with('status', 'Specialty created succesfully');
+        return redirect()->route('specialty.index')->with('success','Especialidad creada con éxito');
     }
 
     /**
@@ -55,7 +60,7 @@ class SpecialtyController extends Controller
      */
     public function show(Specialty $specialty)
     {
-        return view('dashboard.specialty.show', ["specialty" => $specialty]);
+        return view('admin.specialty.show',compact('specialty'));
     }
 
     /**
@@ -64,9 +69,9 @@ class SpecialtyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($specialty)
+    public function edit(Specialty $specialty)
     {
-        return view('dashboard.specialty.edit', ["specialty" => $specialty]);
+        return view('admin.specialty.edit',compact('specialty'));
     }
 
     /**
@@ -76,10 +81,13 @@ class SpecialtyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Specialty $specialty)
+    public function update(SpecialtyRequest $request, Specialty $specialty)
     {
+        Validator::make($request->validated(),[
+            'name' => Rule::unique('specialties')->ignore($specialty)
+        ])->validate();
         $specialty->update($request->validated());
-        return back()->with('status', 'Specialty updated succesfully');
+        return redirect()->route('specialty.index')->with('success','Especialidad actualizada con éxito');
     }
 
     /**
@@ -91,6 +99,6 @@ class SpecialtyController extends Controller
     public function destroy(Specialty $specialty)
     {
         $specialty->update(['active'=>false]);
-        return back()->with('status', 'Specialty deleted succesfully');
+        return redirect()->route('specialty.index')->with('success','Especialidad desactivada con éxito');
     }
 }

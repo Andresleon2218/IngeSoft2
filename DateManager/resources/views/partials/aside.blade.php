@@ -33,8 +33,8 @@
                     </li>
                     <li><a><i class="fa fa-dashboard"></i>Administración <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
-                            <li><a href="{{route('professional.index')}}">Profesionales</a></li>
                             <li><a href="{{route('specialty.index')}}">Especialidades</a></li>
+                            <li><a href="{{route('professional.index')}}">Profesionales</a></li>
                             <li><a href="{{route('client.index')}}">Usuarios</a></li>
                         </ul>
                     </li>

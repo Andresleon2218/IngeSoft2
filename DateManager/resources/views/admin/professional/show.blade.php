@@ -26,6 +26,14 @@
                     <td>{{ $professional->lastnames }}</td>
                   </tr>
                   <tr>
+                    <th scope="row">Especialidades</th>
+                    <td>
+                        @foreach ($professional->specialties as $specialty)
+                            {{$specialty->name}}@if (!$loop->last){{__(', ')}}@endif
+                        @endforeach
+                    </td>
+                  </tr>
+                  <tr>
                     <th scope="row">Correo electrónico</th>
                     <td>{{ $professional->email }}</td>
                   </tr>
@@ -48,6 +56,7 @@
         </div>
     </div>
     <div class="row justify-content-center">
+        <a href="{{ route('professional.index') }}" class="btn btn-outline-secondary mx-3">Volver al listado</a>
         <a data-target="#delete-modal" data-action="{{route('professional.destroy',$professional)}}" data-name="{{$professional->names}} {{$professional->lastnames}}" data-toggle="modal" href="" class="btn btn-outline-danger mx-3">
             Eliminar profesional
         </a>

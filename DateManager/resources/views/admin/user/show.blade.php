@@ -48,6 +48,7 @@
         </div>
     </div>
     <div class="row justify-content-center">
+        <a href="{{ route('client.index') }}" class="btn btn-outline-secondary mx-3">Volver al listado</a>
         <a data-target="#delete-modal" data-action="{{route('client.destroy',$client)}}" data-name="{{$client->names}} {{$client->lastnames}}" data-toggle="modal" href="" class="btn btn-outline-danger mx-3">
             Eliminar usuario
         </a>
