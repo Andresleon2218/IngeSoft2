@@ -13,13 +13,12 @@ class Schedule extends Model
 
     protected $fillable = [
         'monday','tuesday','wednesday','thursday','friday','saturday','sunday',
-        'start_time','end_time','start_date','end_date','duration_of_date','professional_id'
+        'start_time','end_time','start_date','end_date','duration_date','professional_id'
     ];
 
     protected $casts = [
         'start_time' => Time::class,
-        'end_time' => Time::class,
-        'duration_of_date' => Time::class
+        'end_time' => Time::class
     ];
 
     public function professional() {

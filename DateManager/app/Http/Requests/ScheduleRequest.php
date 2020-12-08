@@ -30,7 +30,7 @@ class ScheduleRequest extends FormRequest
             'end_time' => 'required|date_format:H:i|after:start_time',
             'start_date' => 'required|date|after_or_equal:today',
             'end_date' => 'required|date|after_or_equal:start_date',
-            'duration_of_date' => 'nullable|date_format:H:i'
+            'duration_date' => 'nullable|integer|min:1'
         ];
     }
 }
