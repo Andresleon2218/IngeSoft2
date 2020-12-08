@@ -1,75 +1,166 @@
-<form action="{{route('schedule.update',$schedule)}}" method="post">
-    @method('PUT')
-    @csrf
+@extends('layouts.app')
 
-    <label>Días</label>
-    <input type="checkbox" name="days[]" id="monday" value="monday" @if ($schedule->monday)
-        checked
-    @endif>
-    <label for="monday">Lunes</label>
-    <input type="checkbox" name="days[]" id="tuesday" value="tuesday" @if ($schedule->tuesday)
-        checked
-    @endif>
-    <label for="tuesday">Martes</label>
-    <input type="checkbox" name="days[]" id="wednesday" value="wednesday" @if ($schedule->wednesday)
-        checked
-    @endif>
-    <label for="wednesday">Miércoles</label>
-    <input type="checkbox" name="days[]" id="thursday" value="thursday" @if ($schedule->thursday)
-        checked
-    @endif>
-    <label for="thursday">Jueves</label>
-    <input type="checkbox" name="days[]" id="friday" value="friday" @if ($schedule->friday)
-        checked
-    @endif>
-    <label for="friday">Viernes</label>
-    <input type="checkbox" name="days[]" id="saturday" value="saturday" @if ($schedule->saturday)
-        checked
-    @endif>
-    <label for="saturday">Sábado</label>
-    <input type="checkbox" name="days[]" id="sunday" value="sunday" @if ($schedule->sunday)
-        checked
-    @endif>
-    <label for="sunday">Domingo</label>
+@section('module')
+{{__(' | Horarios')}}
+@endsection
 
-    <label for="start_time">Hora de inicio</label>
-    <input type="time" name="start_time" id="start_time" value="{{$schedule->start_time}}">
-    {{$schedule->start_time}}
+@section('title')
+{{__('Actualización de horario')}}
+@endsection
 
-    <label for="end_time">Hora de terminación</label>
-    <input type="time" name="end_time" id="end_time" value="{{$schedule->end_time}}">
+@section('content')
+<div class="row justify-content-center">
+    <div class="col-7 card shadow-lg mt-5 p-5 rounded">
+        @include('partials.error')
+        <form class="row justify-content-center" action="{{ route('schedule.update',$schedule) }}" method="post">
+            @method('PUT')
+            @csrf
 
-    <label for="start_date">Fecha de inicio</label>
-    <input type="date" name="start_date" id="start_date" value="{{$schedule->start_date}}">
+            <div class="form-group col-5">
+                <label>Hora de inicio</label>
+                <input type="time" class="form-control @error('start_time') is-invalid @enderror" name="start_time"
+                    value="{{ old('start_time',$schedule->start_time) }}">
+                @error('start_time')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+                @enderror
+            </div>
 
-    <label for="end_date">Fecha de terminación</label>
-    <input type="date" name="end_date" id="end_date" value="{{$schedule->end_date}}">
+            <div class="form-group col-5">
+                <label>Hora de finalización</label>
+                <input type="time" class="form-control @error('end_time') is-invalid @enderror" name="end_time"
+                    value="{{ old('end_time',$schedule->end_time) }}">
+                @error('end_time')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+                @enderror
+            </div>
 
-    <label for="duration_of_date">Duración de cada cita</label>
-    <input type="time" name="duration_of_date" id="duration_of_date" value="{{$schedule->duration_of_date}}">
+            <div class="form-group col-5">
+                <label>Fecha de inicio</label>
+                <input type="date" class="form-control @error('start_date') is-invalid @enderror" name="start_date"
+                    value="{{ old('start_date',$schedule->start_date) }}">
+                @error('start_date')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+                @enderror
+            </div>
 
-    <input type="submit" value="Actualizar">
+            <div class="form-group col-5">
+                <label>Fecha de finalización</label>
+                <input type="date" class="form-control @error('end_date') is-invalid @enderror" name="end_date"
+                    value="{{ old('end_date',$schedule->end_date) }}">
+                @error('end_date')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+                @enderror
+            </div>
 
-    <!-- Esto se debería eliminar y en su lugar mostrar los errores de manera individual -->
-    @foreach ($errors->all() as $error)
-        <div>{{$error}}</div>
-    @endforeach
-    <!-- Aquí se termina lo que se debería quitar -->
+            <div class="form-group col-10">
+                <label>Días de atención</label>
+                <div class="row justify-content-center">
+                    <div class="form-check form-check-inline col-3">
+                        <input class="form-check-input" type="checkbox" name="days[]" id="1" value="monday"
+                        @if (old('days'))
+                        @foreach (old('days') as $item)
+                        @if ($item=='monday' ) checked @break @endif
+                        @endforeach
+                        @elseif ($schedule->monday) checked
+                        @endif>
+                        <label class="form-check-label" for="1">Lunes</label>
+                    </div>
+                    <div class="form-check form-check-inline col-3">
+                        <input class="form-check-input" type="checkbox" name="days[]" id="2" value="tuesday"
+                        @if (old('days'))
+                        @foreach (old('days') as $item)
+                        @if ($item=='tuesday' ) checked @break @endif
+                        @endforeach
+                        @elseif ($schedule->tuesday) checked
+                        @endif>
+                        <label class="form-check-label" for="2">Martes</label>
+                    </div>
+                    <div class="form-check form-check-inline col-3">
+                        <input class="form-check-input" type="checkbox" name="days[]" id="3" value="wednesday"
+                        @if (old('days'))
+                        @foreach (old('days') as $item)
+                        @if ($item=='wednesday' ) checked @break @endif
+                        @endforeach
+                        @elseif ($schedule->wednesday) checked
+                        @endif>
+                        <label class="form-check-label" for="3">Miércoles</label>
+                    </div>
+                    <div class="form-check form-check-inline col-3">
+                        <input class="form-check-input" type="checkbox" name="days[]" id="4" value="thursday"
+                        @if (old('days'))
+                        @foreach (old('days') as $item)
+                        @if ($item=='thursday' ) checked @break @endif
+                        @endforeach
+                        @elseif ($schedule->thursday) checked
+                        @endif>
+                        <label class="form-check-label" for="4">Jueves</label>
+                    </div>
+                    <div class="form-check form-check-inline col-3">
+                        <input class="form-check-input" type="checkbox" name="days[]" id="5" value="friday"
+                        @if (old('days'))
+                        @foreach (old('days') as $item)
+                        @if ($item=='friday' ) checked @break @endif
+                        @endforeach
+                        @elseif ($schedule->friday) checked
+                        @endif>
+                        <label class="form-check-label" for="5">Viernes</label>
+                    </div>
+                    <div class="form-check form-check-inline col-3">
+                        <input class="form-check-input" type="checkbox" name="days[]" id="6" value="saturday"
+                        @if (old('days'))
+                        @foreach (old('days') as $item)
+                        @if ($item=='saturday' ) checked @break @endif
+                        @endforeach
+                        @elseif ($schedule->saturday) checked
+                        @endif>
+                        <label class="form-check-label" for="6">Sábado</label>
+                    </div>
+                    <div class="form-check form-check-inline col-3">
+                        <input class="form-check-input" type="checkbox" name="days[]" id="7" value="sunday"
+                        @if (old('days'))
+                        @foreach (old('days') as $item)
+                        @if ($item=='sunday' ) checked @break @endif
+                        @endforeach
+                        @elseif ($schedule->sunday) checked
+                        @endif>
+                        <label class="form-check-label" for="7">Domingo</label>
+                    </div>
+                </div>
+                @error('days')
+                <label class="font-weight-bold text-danger" style="font-size:80%">
+                    {{$message}}
+                </label>
+                @enderror
+            </div>
 
-</form>
+            <div class="form-group col-5">
+                <label>Duración de cita (Horas)</label>
+                <input type="text" class="form-control @error('duration_date') is-invalid @enderror"
+                    name="duration_date" value="{{ old('duration_date',$schedule->duration_date) }}">
+                @error('duration_date')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+                @enderror
+            </div>
 
-<!-- Esto se debería colocar en otro archivo con el fin de ser reutilizado.-->
-<!-- Es para mostrar los errores en caso de que el horario se solape con uno existente. -->
-@if (session('error'))
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
-        {{session('error')}}
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-        </button>
+            <div class="col-10">
+                <div class="row justify-content-center">
+                    <a href="{{ route('schedule.index') }}" class="btn btn-outline-secondary m-2">Cancelar</a>
+                    <input class="btn btn-outline-success m-2" type="submit" value="Actualizar">
+                </div>
+            </div>
+
+        </form>
     </div>
-    <script>
-        // Para que se muestre el error durante 3 segundos (Se necesita JQuery)
-        setTimeout(function(){$(".alert").alert("close")},3000)
-    </script>
-@endif
-<!-- Aquí se termina la sección de mostrar los errores -->
+</div>
+
+@endsection

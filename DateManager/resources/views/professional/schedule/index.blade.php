@@ -25,7 +25,6 @@
                     <th scope="col">Fecha de termino</th>
                     <th scope="col">Hora de inicio</th>
                     <th scope="col">Hora de termino</th>
-                    <th scope="col">Duración de cita (Horas)</th>
                     <th scope="col">Estado</th>
                     <th scope="col" class="text-center">Opciones</th>
                 </tr>
@@ -37,7 +36,6 @@
                     <td>{{ $schedule->end_date }}</td>
                     <td>{{ $schedule->start_time }}</td>
                     <td>{{ $schedule->end_time }}</td>
-                    <td>{{ $schedule->duration_date }}</td>
                     <td>
                         @if ($schedule->active)
                         Activo

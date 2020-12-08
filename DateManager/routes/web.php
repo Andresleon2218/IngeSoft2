@@ -51,10 +51,10 @@ Route::resource('clients', ClientController::class)->names('client');
 ////////////////////////////// MÓDULO DEL PROFESIONAL ////////////////////////////
 
 // ------------------- Rutas de los horarios --------------------
-Route::resource('schedules',ScheduleController::class)->names('schedule');
 Route::get('schedules/downloadPDF',[ScheduleController::class,'downloadPDF'])->name('schedule.downloadPDF');
-Route::get('schedules/streamPDF', [ScheduleController::class, 'streamPDF'])->name('schedule.streamPDF');
-Route::get('schedules/excel', [ScheduleController::class, 'exportExcel'])->name('schedule.exportExcel');
+Route::get('schedules/streamPDF', [ScheduleController::class,'streamPDF'])->name('schedule.streamPDF');
+Route::get('schedules/excel', [ScheduleController::class,'exportExcel'])->name('schedule.exportExcel');
+Route::resource('schedules',ScheduleController::class)->names('schedule');
 
 ////////////////////////// FIN DEL MÓDULO DEL PROFESIONAL ////////////////////////
 

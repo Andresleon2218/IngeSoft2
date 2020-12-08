@@ -90,7 +90,7 @@ class ScheduleController extends Controller
         $schedule = new Schedule($data);
         $schedule->professional()->associate(Auth::user());
         $schedule->save();
-        return redirect()->route('professional.schedule.index')->with('success','Horario registrado con éxito');
+        return redirect()->route('schedule.index')->with('success','Horario registrado con éxito');
     }
 
     /**
@@ -164,7 +164,7 @@ class ScheduleController extends Controller
             unset($data['duration_date']);
         }
         $schedule->update($data);
-        return redirect()->route('professional.schedule.index')->with('success','Horario actualizado con éxito');
+        return redirect()->route('schedule.index')->with('success','Horario actualizado con éxito');
     }
 
     /**
