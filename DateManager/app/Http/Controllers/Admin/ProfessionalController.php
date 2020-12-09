@@ -9,13 +9,21 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\ProfessionalRequest;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class ProfessionalController extends Controller
 {
 
     public function __construct() {
         $this->middleware(['auth', 'verified']);
-        $this->middleware('admin');
+        $this->middleware('admin')->except('indexToClient');
+    }
+
+    public function indexToClient(Specialty $specialty)
+    {
+        $professionals = $specialty->professionals;
+        $professionals = new LengthAwarePaginator($professionals,$professionals->count(),10);
+        return view('user.professionals',compact('specialty','professionals'));
     }
 
     /**

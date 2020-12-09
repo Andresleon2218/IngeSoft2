@@ -26,8 +26,7 @@ class DateRequest extends FormRequest
         return [
             'date' => 'required|date|after_or_equal:today',
             'start' => 'required|date_format:H:i',
-            'end' => 'required|date_format:H:i|after:start',
-            'professional_id' => 'required|integer',
+            'schedule' => 'required|integer|min:1',
             'description' => 'nullable|string'
         ];
     }

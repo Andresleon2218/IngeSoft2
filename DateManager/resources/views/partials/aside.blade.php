@@ -46,16 +46,16 @@
                     <li><a><i class="fa fa-graduation-cap"></i>Profesional <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
                             <li><a href="{{route('schedule.index')}}">Mis horarios</a></li>
-                            <li><a href="{{route('indexPro')}}">Mis citas</a></li>
+                            <li><a href="#">Mis citas</a></li>
                         </ul>
                     </li>
                     @endif
 
                     <li><a><i class="fa fa-desktop"></i>Usuario <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
-                            <li><a href="general_elements.html">Mis citas</a></li>
-                            <li><a href="{{route('professional.index')}}">Profesionales</a></li>
-                            <li><a href="{{route('specialty.index')}}">Especialidades</a></li>
+                            <li><a href="{{ route('date.index') }}">Mis citas</a></li>
+                            <li><a href="#">Profesionales</a></li>
+                            <li><a href="#">Especialidades</a></li>
                         </ul>
                     </li>
                 </ul>

@@ -14,8 +14,15 @@ class SpecialtyController extends Controller
     public function __construct()
     {
         $this->middleware(['auth', 'verified']);
-        $this->middleware('admin');
+        $this->middleware('admin')->except('indexToClient');
     }
+
+    public function indexToClient()
+    {
+        $specialties = Specialty::where('active',1)->orderBy('created_at', 'desc')->paginate(9);
+        return view('user.specialties',compact('specialties'));
+    }
+
     /**
      * Display a listing of the resource.
      *

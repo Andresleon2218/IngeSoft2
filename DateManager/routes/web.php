@@ -3,12 +3,11 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PdfController;
-use App\Http\Controllers\DateController;
-use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Admin\SpecialtyController;
+use App\Http\Controllers\User\DateController;
 use App\Http\Controllers\Professional\ScheduleController;
 use App\Http\Controllers\Admin\ClientController;
-use App\Http\Controllers\Admin\SpecialtyController;
 use App\Http\Controllers\Admin\ProfessionalController;
 
 /*
@@ -33,6 +32,27 @@ Route::get('me',[ProfileController::class,'show'])->name('profile');
 Route::get('me/update',[ProfileController::class,'edit'])->name('profile.edit');
 Route::put('me/update',[ProfileController::class,'update'])->name('profile.update');
 Route::delete('me/delete',[ProfileController::class,'destroy'])->name('profile.delete');
+
+
+////////////////////////////////// MÓDULO DEL CLIENTE ///////////////////////////////
+
+// -------------------- Ruta de las especialidades ---------------------
+Route::get('dates/specialties',[SpecialtyController::class,'indexToClient'])->name('date.specialties');
+
+// -------------------- Ruta de los profesionales ---------------------
+Route::get('dates/specialties/{specialty}/professionals',[ProfessionalController::class,'indexToClient'])->name('date.professionals');
+
+// -------------------- Ruta de los horarios ---------------------
+Route::get('dates/specialties/{specialty}/professionals/{professional}/schedules',[ScheduleController::class,'indexToClient'])->name('date.schedules');
+
+// -------------------- Rutas de la creación de las citas ---------------------
+Route::get('dates/specialties/{specialty}/professionals/{professional}/schedules/{schedule}/create',[DateController::class,'create'])->name('date.createDate');
+
+// -------------------- Rutas de las citas ---------------------
+Route::resource('dates',DateController::class)->names('date');
+
+//////////////////////////// FIN DEL MÓDULO DEL CLIENTE /////////////////////////////
+
 
 //////////////////////////// MÓDULO DEL ADMINISTRADOR /////////////////
 
@@ -59,32 +79,8 @@ Route::resource('schedules',ScheduleController::class)->names('schedule');
 ////////////////////////// FIN DEL MÓDULO DEL PROFESIONAL ////////////////////////
 
 
-
 Route::get('dashboard/downloadClientspdf', [PdfController::class, 'downloadClient'])->name('downloadClient');
 Route::get('dashboard/downloadProspdf', [PdfController::class, 'downloadPro'])->name('downloadPro');
 
 Route::get('dashboard/streamClientspdf', [PdfController::class, 'streamClient'])->name('streamClient');
 Route::get('dashboard/streamProspdf', [PdfController::class, 'streamPro'])->name('streamPro');
-
-
-Route::get('dashboard/excelClient', [UserController::class, 'exportClient'])->name('excelClient');
-Route::get('dashboard/excelPro', [UserController::class, 'exportPro'])->name('excelPro');
-
-
-
-Route::resource('/dates',DateController::class)->names('dates');
-
-
-
-Route::get('users/{pro}/editPro', [UserController::class, 'editPro'])->name('editPro');
-Route::put('users/{user}/update', [UserController::class, 'update'])->name('updatePro');
-Route::put('users/{user}/update', [UserController::class, 'update'])->name('updatePro');
-
-Route::get('users/createPro', [UserController::class, 'createPro'])->name('createPro');
-
-Route::delete('users/{user}/destroy', [UserController::class, 'destroy'])->name('destroyUser');
-Route::get('users/{pro}/showPro', [UserController::class, 'showPro'])->name('showPro');
-
-Route::get('users/indexPro', [UserController::class, 'indexPro'])->name('indexPro');
-Route::post('users/create',[UserController::class,'store'])->name('user.store');
-

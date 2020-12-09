@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Professional;
 
+use App\Models\User;
 use App\Models\Schedule;
+use App\Models\Specialty;
 use Illuminate\Support\Carbon;
 use App\Exports\ScheduleExport;
 use App\Http\Controllers\Controller;
@@ -16,7 +18,14 @@ class ScheduleController extends Controller
 
     public function __construct() {
         $this->middleware(['auth','verified']);
-        $this->middleware('professional');
+        $this->middleware('professional')->except('indexToClient');
+    }
+
+    public function indexToClient(Specialty $specialty,User $professional)
+    {
+        $schedules = $professional->schedules;
+        $schedules = new LengthAwarePaginator($schedules,$schedules->count(),12);
+        return view('user.schedules',compact('specialty','professional','schedules'));
     }
 
     /**
@@ -26,8 +35,7 @@ class ScheduleController extends Controller
      */
     public function index()
     {
-        $user = Auth::user();
-        $schedules = $user->schedules;
+        $schedules = Auth::user()->schedules;
         $schedules = new LengthAwarePaginator($schedules,$schedules->count(),10);
         return view('professional.schedule.index',compact('schedules'));
     }

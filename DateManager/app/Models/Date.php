@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Casts\Time;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -21,8 +22,8 @@ class Date extends Model
     ];
 
     protected $casts = [
-        'start' => 'date_format:H:i',
-        'end' => 'date_format:H:i'
+        'start' => Time::class,
+        'end' => Time::class
     ];
 
     public function schedule() {
